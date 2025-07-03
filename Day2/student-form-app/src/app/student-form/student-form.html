@@ -1,0 +1,81 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Student Registration Form</h2>
+    <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)" novalidate class="p-4 border rounded bg-light shadow">
+  
+      <!-- Name -->
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" ngModel required />
+        <div class="text-danger" *ngIf="studentForm.submitted && !studentForm.controls['name']?.valid">
+          Name is required.
+        </div>
+      </div>
+  
+      <!-- Age -->
+      <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input type="number" name="age" class="form-control" ngModel required min="1" />
+        <div class="text-danger" *ngIf="studentForm.submitted && !studentForm.controls['age']?.valid">
+          Valid age is required.
+        </div>
+      </div>
+  
+      <!-- Gender -->
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" value="Male" ngModel required>
+          <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" value="Female" ngModel>
+          <label class="form-check-label">Female</label>
+        </div>
+        <div class="text-danger" *ngIf="studentForm.submitted && !studentForm.controls['gender']?.valid">
+          Gender is required.
+        </div>
+      </div>
+  
+      <!-- Course -->
+      <div class="mb-3">
+        <label class="form-label">Course</label>
+        <select name="course" class="form-select" ngModel required>
+          <option value="" disabled selected>Select course</option>
+          <option *ngFor="let course of ['BCA', 'BBA', 'B.Tech', 'MBA', 'MCA']" [value]="course">
+            {{ course }}
+          </option>
+        </select>
+        <div class="text-danger" *ngIf="studentForm.submitted && !studentForm.controls['course']?.valid">
+          Course is required.
+        </div>
+      </div>
+  
+      <button class="btn btn-primary w-100">Submit</button>
+    </form>
+  
+    <!-- Submitted Table -->
+    <div *ngIf="submitted" class="mt-5">
+      <h4>Submitted Students</h4>
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of studentList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.age }}</td>
+            <td>{{ s.gender }}</td>
+            <td>{{ s.course }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
