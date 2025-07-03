@@ -37,13 +37,7 @@ This project demonstrates the use of:
 
 <img src="../Day2/screenshots/image1.png" alt="Submitted Data Table" width="700"/>
 
-> ℹ️ Place these screenshots inside a `screenshots/` folder or host them on an image service like Imgur or GitHub CDN.
+
 
 ---
 
-## 📦 Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/student-form-app.git
-   cd student-form-app
