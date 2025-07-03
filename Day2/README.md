@@ -29,13 +29,13 @@ This project demonstrates the use of:
 
 ### 📌 Registration Form UI
 
-<img src="Day2\screenshots\image1.png" alt="Student Registration Form UI" width="700"/>
+<img src="../Day2/screenshots/image1.png" alt="Student Registration Form UI" width="700"/>
 
 ---
 
 ### 📌 Submitted Student Data
 
-<img src="Day2\screenshots\image2.png" alt="Submitted Data Table" width="700"/>
+<img src="../Day2/screenshots/image1.png" alt="Submitted Data Table" width="700"/>
 
 > ℹ️ Place these screenshots inside a `screenshots/` folder or host them on an image service like Imgur or GitHub CDN.
 
